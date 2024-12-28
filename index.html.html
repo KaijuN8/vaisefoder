@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+
+    <style>
+        body{
+            background-color: rgb(56, 55, 55);
+            
+        }
+        .painel{
+            
+            margin: auto;
+            text-align: center;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            padding-top: 5px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.336);
+        }
+
+        #sim{
+            margin-left: -70px;
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: pink;
+            border: white;
+            border-radius: 20px;
+            color: white; 
+            cursor: pointer;
+            
+
+        }
+
+        #nao{
+            position:absolute;
+            height: 40px;
+            width: 60px;
+            background-color: pink;
+            border: white;
+            border-radius: 20px;
+            color: white;
+            margin-left: 10px; 
+
+
+        }
+
+
+        img{
+            width: 300px;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Você gostaria de sair comigo?</h1>
+        <img src="convite.gif" alt="convite">
+
+        <h2>Pensa com carinho!</h2>
+        
+
+        <a href="aceitou.html"><button onclick="aceitou()" id="sim">Sim! </button></a>
+        <button onmouseover="fuja()" id="nao"> Não! </button>
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth
+            var minY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * minY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+        }
+
+        
+    </script>
+    
+</body>
+</html>
